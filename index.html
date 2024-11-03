@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+            margin: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+            padding: 1rem;
+            max-width: 1600px;
+        }
+
+        .title {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .character-card {
+            position: relative;
+            width: 180px;
+            height: 480px;
+            overflow: hidden;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            filter: brightness(0.6);
+        }
+
+        .character-card iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+            transform: scale(1.05);
+        }
+
+        .character-card:hover {
+            filter: brightness(1);
+            width: 260px;
+        }
+
+        .character-card::after {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .social-bar {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-btn {
+            color: white;
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-y: auto;
+                min-height: auto;
+            }
+
+            .wrapper {
+                padding: 0.5rem;
+                gap: 1rem;
+            }
+
+            .container {
+                gap: 0.5rem;
+            }
+
+            .character-card {
+                width: calc(50% - 0.5rem);
+                height: 300px;
+            }
+
+            .character-card:hover {
+                width: calc(50% - 0.5rem);
+            }
+
+            .social-bar {
+                padding: 0.75rem;
+                gap: 0.75rem;
+                width: 90%;
+                margin-bottom: 1rem;
+            }
+
+            .social-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .character-card {
+                width: 100%;
+                height: 250px;
+            }
+
+            .character-card:hover {
+                width: 100%;
+            }
+
+            .title {
+                font-size: 1.5rem;
+                margin: 0.5rem;
+            }
+
+            .social-bar {
+                width: 100%;
+                border-radius: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">My Work</div>
+        <div class="container">
+            <div class="character-card box box-1" data-text="Alpha Media">
+                <iframe src="https://www.youtube.com/embed/SN8lVswf0EM?autoplay=1&mute=1&loop=1&playlist=SN8lVswf0EM" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="character-card box box-2" data-text="GG Digitals">
+                <iframe src="https://www.youtube.com/embed/FJQZp-kpE5o?autoplay=1&mute=1&loop=1&playlist=FJQZp-kpE5o" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="character-card box box-3" data-text="Baraem Aljannah">
+                <iframe src="https://www.youtube.com/embed/mz1wJ3jjDh8?autoplay=1&mute=1&loop=1&playlist=mz1wJ3jjDh8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="character-card box box-4" data-text="إذاعة ثمانية">
+                <iframe src="https://www.youtube.com/embed/AF---EvM-x0?autoplay=1&mute=1&loop=1&playlist=AF---EvM-x0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="character-card box box-5" data-text="Simon Squibb">
+                <iframe src="https://www.youtube.com/embed/CvXlBZm0GbM?autoplay=1&mute=1&loop=1&playlist=CvXlBZm0GbM" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="social-bar">
+            <a href="https://x.com/SElguerri56062" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/editor.seddik/" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/seddik.madrid.123829/" class="social-btn"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@editor_seddik" class="social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="https://discord.com/users/513501726423121980" class="social-btn"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+</body>
+</html>
